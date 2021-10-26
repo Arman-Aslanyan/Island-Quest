@@ -21,8 +21,8 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void ChangeScene(int index)
+    public void ChangeScene()
     {
-        SceneManager.LoadScene(index);
+        
     }
 }

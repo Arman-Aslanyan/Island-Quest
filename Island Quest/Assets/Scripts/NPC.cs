@@ -20,7 +20,7 @@ public class NPC : MonoBehaviour
 
     private void Start()
     {
-
+        
     }
 
     //Triggers upon clicking the NPC
