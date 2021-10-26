@@ -8,6 +8,12 @@ public class NPC : MonoBehaviour
 {
     //The sentences the NPC shall say
     public string[] lines;
+    //All the player input chat buttons
+    public List<Button> buttons = new List<Button>();
+    //offsets of each button
+    public List<Vector3> offsetsUI = new List<Vector3>();
+    //Buttons canvas
+    public Canvas canvas;
     //The box that the text shall appear
     public Text textBox;
     int index = 0;
@@ -15,22 +21,38 @@ public class NPC : MonoBehaviour
     [Tooltip("Is measured in seconds")]
     public float typingSpeed = 0.02f;
 
+    public GameObject prefabButton;
+
+    private bool hasClicked = false;
     public Button yes;
     public Button no;
 
     private void Start()
     {
-        
+        for (int i = 0; i < buttons.Count; i++)
+        {
+            //offsetsUI.Add(Vector3.zero);
+            GameObject clone;
+            Vector3 pos = offsetsUI[i];
+            clone = Instantiate(prefabButton, pos, prefabButton.transform.rotation);
+            clone.transform.SetParent(canvas.transform);
+            clone.transform.localScale = Vector3.one;
+            clone.gameObject.SetActive(true);
+        }
     }
 
     //Triggers upon clicking the NPC
     public void OnMouseUp()
     {
-        //Checks if the NPC's current line is not it's final one
-        if (index <= lines.Length - 1)
+        if (!hasClicked)
         {
-            textBox.text = "";
-            StartCoroutine(DialogueTimer());
+            hasClicked = true;
+            //Checks if the NPC's current line is not it's final one
+            if (index <= lines.Length - 1)
+            {
+                textBox.text = "";
+                StartCoroutine(DialogueTimer());
+            }
         }
     }
 
@@ -65,5 +87,6 @@ public class NPC : MonoBehaviour
             no.gameObject.SetActive(true);
         }
         index++;
+        hasClicked = false;
     }
 }
