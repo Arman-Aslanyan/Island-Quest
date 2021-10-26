@@ -8,11 +8,13 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     private GameObject Player;
+    public GameObject OnlyAndyUseThis;
 
     // Start is called before the first frame update
     void Start()
     {
         Player = FindObjectOfType<PlayerController>().gameObject;
+        OnlyAndyUseThis.SetActive(false);
     }
 
     // Update is called once per frame
