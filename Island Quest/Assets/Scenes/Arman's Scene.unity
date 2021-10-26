@@ -419,8 +419,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -182, y: -63}
-  m_SizeDelta: {x: 336.21997, y: 79.84}
+  m_AnchoredPosition: {x: -583.53, y: -62.67}
+  m_SizeDelta: {x: 809.35, y: 89.18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &170909583
 MonoBehaviour:
@@ -449,7 +449,7 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 3
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 0
     m_HorizontalOverflow: 0
@@ -585,6 +585,7 @@ MonoBehaviour:
   - Hello Traveler!
   - Would you like to enter my humble abode?
   textBox: {fileID: 170909583}
+  typingSpeed: 0.02
   yes: {fileID: 2067127571}
   no: {fileID: 2052331313}
 --- !u!61 &727060940
