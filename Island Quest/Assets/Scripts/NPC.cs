@@ -12,8 +12,10 @@ public class NPC : MonoBehaviour
     public List<Button> buttons = new List<Button>();
     //offsets of each button
     public List<Vector3> offsetsUI = new List<Vector3>();
+    //The text for each button
+    public string[] UI_Texts;
     //Buttons canvas
-    private Canvas canvas;
+    public Canvas canvas;
     //The box that the text shall appear
     public Text textBox;
     int index = 0;
@@ -38,6 +40,9 @@ public class NPC : MonoBehaviour
             GameObject clone;
             Vector3 pos = offsetsUI[i];
             clone = Instantiate(prefabButton, pos, prefabButton.transform.rotation);
+            buttons[i] = clone.GetComponent<Button>();
+            clone.GetComponentInChildren<Text>().text = UI_Texts[i];
+            clone.GetComponentInChildren<Text>().color = Color.grey - new Color(0.4f, 0.4f, 0.4f, 0);
             clone.transform.SetParent(canvas.transform);
             clone.transform.localScale = Vector3.one;
             clone.gameObject.SetActive(true);

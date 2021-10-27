@@ -1540,18 +1540,166 @@ PrefabInstance:
     - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
       propertyPath: canvas
       value: 
-      objectReference: {fileID: 1433865839}
+      objectReference: {fileID: 0}
     - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
       propertyPath: textBox
       value: 
       objectReference: {fileID: 170909583}
     - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
+      propertyPath: typingSpeed
+      value: 0.045
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
+      propertyPath: prefabButton
+      value: 
+      objectReference: {fileID: 6388465708846923334, guid: bdb4636e9fd8b1b41a95aaad598e97ef, type: 3}
+    - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
+      propertyPath: lines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
+      propertyPath: colors.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
       propertyPath: buttons.Array.size
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
+      propertyPath: UI_Texts.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
+      propertyPath: lines.Array.data[0]
+      value: Hello Traveler!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
+      propertyPath: lines.Array.data[1]
+      value: Would you like to enter my humble abode?
       objectReference: {fileID: 0}
     - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
       propertyPath: offsetsUI.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
+      propertyPath: Text_Colors.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
+      propertyPath: UI_Texts.Array.data[0]
+      value: yaas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
+      propertyPath: UI_Texts.Array.data[1]
+      value: bababouy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
+      propertyPath: UI_Texts.Array.data[2]
+      value: aaaaaa
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
+      propertyPath: colors.Array.data[0].b
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
+      propertyPath: colors.Array.data[0].g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
+      propertyPath: colors.Array.data[0].r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
+      propertyPath: colors.Array.data[1].b
+      value: 0.99862766
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
+      propertyPath: colors.Array.data[1].g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
+      propertyPath: colors.Array.data[1].r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
+      propertyPath: offsetsUI.Array.data[0].x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
+      propertyPath: offsetsUI.Array.data[0].y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
+      propertyPath: offsetsUI.Array.data[0].z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
+      propertyPath: offsetsUI.Array.data[1].x
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
+      propertyPath: offsetsUI.Array.data[1].y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
+      propertyPath: offsetsUI.Array.data[2].x
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
+      propertyPath: offsetsUI.Array.data[2].y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
+      propertyPath: Text_Colors.Array.data[0].b
+      value: 0.32727957
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
+      propertyPath: Text_Colors.Array.data[0].g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
+      propertyPath: Text_Colors.Array.data[0].r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
+      propertyPath: Text_Colors.Array.data[1].b
+      value: 0.8795767
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
+      propertyPath: Text_Colors.Array.data[1].g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
+      propertyPath: Text_Colors.Array.data[1].r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
+      propertyPath: Button_TextColors.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
+      propertyPath: Button_TextColors.Array.data[0].b
+      value: 0.41822243
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
+      propertyPath: Button_TextColors.Array.data[0].g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
+      propertyPath: Button_TextColors.Array.data[0].r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
+      propertyPath: Button_TextColors.Array.data[1].b
+      value: 0.8780918
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
+      propertyPath: Button_TextColors.Array.data[1].g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
+      propertyPath: Button_TextColors.Array.data[1].r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5514639555066238977, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
       propertyPath: m_Name
