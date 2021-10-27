@@ -13,7 +13,7 @@ public class NPC : MonoBehaviour
     //offsets of each button
     public List<Vector3> offsetsUI = new List<Vector3>();
     //Buttons canvas
-    public Canvas canvas;
+    private Canvas canvas;
     //The box that the text shall appear
     public Text textBox;
     int index = 0;
@@ -29,6 +29,9 @@ public class NPC : MonoBehaviour
 
     private void Start()
     {
+        //finds the canvas that will be used for dialogue
+        canvas = GameObject.Find("GameManager").GetComponentInChildren<Canvas>();
+
         for (int i = 0; i < buttons.Count; i++)
         {
             //offsetsUI.Add(Vector3.zero);
@@ -59,7 +62,10 @@ public class NPC : MonoBehaviour
     //Upon clicking, Player enters NPC house
     public void ButtonYes()
     {
+        //call ButtonNo() in order to reset dialogue to prevent it staying after changing scenes
+        ButtonNo();
         SceneManager.LoadScene("House1");
+        GameManager.Instance.OnSceneChange();
     }
 
     //Upon clicking, Resets NPC dialogue
