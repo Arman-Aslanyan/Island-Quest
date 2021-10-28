@@ -1,17 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
     public float speed = 10;
+    private Button[] findButtons;
+    private Button PlayerButton;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         FindObjectOfType<GameManager>().Player = gameObject;
+        findButtons = FindObjectsOfType<Button>();
+        for (int i = 0; i < findButtons.Length; i++)
+        {
+            if (findButtons[i].gameObject.name == "PlayerButton")
+                PlayerButton = findButtons[i];
+        }
     }
 
     // Update is called once per frame
