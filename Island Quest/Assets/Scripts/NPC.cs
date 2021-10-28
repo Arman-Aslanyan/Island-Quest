@@ -9,9 +9,10 @@ public class NPC : MonoBehaviour
     //The sentences the NPC shall say
     public string[] lines;
     //All the player input chat buttons
-    public List<Button> buttons = new List<Button>();
+    //public List<Button> buttons = new List<Button>();
+    public Button[] buttons;
     //offsets of each button
-    public List<Vector3> offsetsUI = new List<Vector3>();
+    public List<Vector2> Button_Positions = new List<Vector2>();
     //The text for each button
     public string[] UI_Texts;
     //Buttons canvas
@@ -33,18 +34,21 @@ public class NPC : MonoBehaviour
     {
         //finds the canvas that will be used for dialogue
         canvas = GameObject.Find("GameManager").GetComponentInChildren<Canvas>();
+        textBox = canvas.GetComponentInChildren<Text>();
 
-        for (int i = 0; i < buttons.Count; i++)
+        for (int i = 0; i < buttons.Length; i++)
         {
             //offsetsUI.Add(Vector3.zero);
             GameObject clone;
-            Vector3 pos = offsetsUI[i];
-            clone = Instantiate(prefabButton, pos, prefabButton.transform.rotation);
+            clone = Instantiate(prefabButton, Vector3.zero, prefabButton.transform.rotation);
+            clone.transform.localScale = Vector3.one;
+            clone.transform.SetParent(canvas.transform);
+            clone.GetComponent<RectTransform>().anchoredPosition = Button_Positions[i] * 100;
             buttons[i] = clone.GetComponent<Button>();
+            print("found button?");
             clone.GetComponentInChildren<Text>().text = UI_Texts[i];
             clone.GetComponentInChildren<Text>().color = Color.grey - new Color(0.4f, 0.4f, 0.4f, 0);
-            clone.transform.SetParent(canvas.transform);
-            clone.transform.localScale = Vector3.one;
+            //buttons[i].onClick.AddListener(GameManager.Instance.ChangeScene();
             clone.gameObject.SetActive(true);
         }
     }

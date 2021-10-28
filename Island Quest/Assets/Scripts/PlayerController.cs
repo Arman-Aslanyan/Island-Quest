@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        FindObjectOfType<GameManager>().Player = gameObject;
     }
 
     // Update is called once per frame

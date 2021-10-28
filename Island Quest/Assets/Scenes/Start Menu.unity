@@ -455,7 +455,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 86762464}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -1120,26 +1120,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 448487655}
     m_Modifications:
-    - target: {fileID: 6388465708376308611, guid: bdb4636e9fd8b1b41a95aaad598e97ef, type: 3}
-      propertyPath: m_Text
-      value: Yes
-      objectReference: {fileID: 0}
-    - target: {fileID: 6388465708376308611, guid: bdb4636e9fd8b1b41a95aaad598e97ef, type: 3}
-      propertyPath: m_Color.b
-      value: 0.00448361
-      objectReference: {fileID: 0}
-    - target: {fileID: 6388465708376308611, guid: bdb4636e9fd8b1b41a95aaad598e97ef, type: 3}
-      propertyPath: m_Color.g
-      value: 0.6698113
-      objectReference: {fileID: 0}
-    - target: {fileID: 6388465708376308611, guid: bdb4636e9fd8b1b41a95aaad598e97ef, type: 3}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6388465708846923332, guid: bdb4636e9fd8b1b41a95aaad598e97ef, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 6388465708846923333, guid: bdb4636e9fd8b1b41a95aaad598e97ef, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1227,10 +1207,6 @@ PrefabInstance:
     - target: {fileID: 6388465708846923334, guid: bdb4636e9fd8b1b41a95aaad598e97ef, type: 3}
       propertyPath: m_Name
       value: yes
-      objectReference: {fileID: 0}
-    - target: {fileID: 6388465708846923334, guid: bdb4636e9fd8b1b41a95aaad598e97ef, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdb4636e9fd8b1b41a95aaad598e97ef, type: 3}
@@ -1402,6 +1378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
+  canvas: {fileID: 0}
 --- !u!4 &1556667297
 Transform:
   m_ObjectHideFlags: 0

@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public GameObject Player;
-    private Canvas canvas;
+    public Canvas canvas;
 
     // Start is called before the first frame update
     void Start()
@@ -28,8 +28,7 @@ public class GameManager : MonoBehaviour
 
     public void OnSceneChange()
     {
-        //try to get the canvas to find and store the current level's camera
-        Player = FindObjectOfType<PlayerController>().gameObject;
+        //pain
     }
 
     public void ChangeScene(string name)

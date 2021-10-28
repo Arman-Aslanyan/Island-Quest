@@ -7,6 +7,11 @@ public class CameraFollow : MonoBehaviour
     public Transform target;
     public float lerpVal = 0.1f;
 
+    void Start()
+    {
+        FindObjectOfType<GameManager>().canvas.worldCamera = gameObject.GetComponent<Camera>();
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
