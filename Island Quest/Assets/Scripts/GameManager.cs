@@ -7,9 +7,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    private GameObject Player;
+    public GameObject Player;
     private Canvas canvas;
-    public GameObject OnlyAndyUseThis;
 
     // Start is called before the first frame update
     void Start()
@@ -18,10 +17,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         else
             DontDestroyOnLoad(gameObject);
-
-        Player = FindObjectOfType<PlayerController>().gameObject;
         canvas = GetComponentInChildren<Canvas>();
-        OnlyAndyUseThis.SetActive(false);
     }
 
     // Update is called once per frame
@@ -33,10 +29,12 @@ public class GameManager : MonoBehaviour
     public void OnSceneChange()
     {
         //try to get the canvas to find and store the current level's camera
+        Player = FindObjectOfType<PlayerController>().gameObject;
     }
 
-    public void ChangeScene()
+    public void ChangeScene(string name)
     {
-        
+        SceneManager.LoadScene(name);
+        OnSceneChange();
     }
 }
