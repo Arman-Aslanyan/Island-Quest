@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class NPC : MonoBehaviour
 {
-    public static NPC npc;
+    public static NPC Instance;
 
     //The sentences the NPC shall say
     public string[] introduction_Lines;
@@ -30,9 +30,7 @@ public class NPC : MonoBehaviour
 
     public GameObject prefabButton;
 
-    private bool hasClicked = false;
-    public Button yes;
-    public Button no;
+    public static bool hasClicked = false;
 
     private void Start()
     {
@@ -53,7 +51,6 @@ public class NPC : MonoBehaviour
             clone.GetComponentInChildren<Text>().text = UI_Texts[i];
             clone.GetComponentInChildren<Text>().color = Color.grey - new Color(0.4f, 0.4f, 0.4f, 0);
             buttons[i].onClick.AddListener(OnClickListener);
-            clone.gameObject.SetActive(true);
         }
     }
 
@@ -67,7 +64,7 @@ public class NPC : MonoBehaviour
             if (index <= introduction_Lines.Length - 1)
             {
                 textBox.text = "";
-                StartCoroutine(DialogueTimer());
+                StartCoroutine(NPCDialogueTimer(introduction_Lines));
             }
         }
     }
@@ -84,8 +81,6 @@ public class NPC : MonoBehaviour
     //Upon clicking, Resets NPC dialogue
     public void ButtonNo()
     {
-        yes.gameObject.SetActive(false);
-        no.gameObject.SetActive(false);
         textBox.text = "";
         index = 0;
     }
@@ -99,19 +94,18 @@ public class NPC : MonoBehaviour
     }
 
     //The Coroutine that controls the diaglogue text
-    public IEnumerator DialogueTimer()
+    public IEnumerator NPCDialogueTimer(string[] text)
     {
         //Auto-typer
-        foreach (char character in introduction_Lines[index].ToCharArray())
+        foreach (char character in text[index].ToCharArray())
         {
             textBox.text += character;
             yield return new WaitForSeconds(typingSpeed);
         }
         //Will enable the player to choose after the final sentence has been said
-        if (index == introduction_Lines.Length - 1)
+        if (index == text.Length - 1)
         {
-            yes.gameObject.SetActive(true);
-            no.gameObject.SetActive(true);
+            PlayerController.Instance.EnableSpeech();
         }
         index++;
         hasClicked = false;

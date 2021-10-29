@@ -476,7 +476,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 598450022}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8dacda6e67d934641871d7b031fbfdab, type: 3}
   m_Name: 
@@ -1253,12 +1253,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
+      propertyPath: introduction_Lines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
       propertyPath: Button_Positions.Array.data[0].x
       value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
       propertyPath: Button_Positions.Array.data[1].x
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
+      propertyPath: introduction_Lines.Array.data[0]
+      value: Hello traveler!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
+      propertyPath: introduction_Lines.Array.data[1]
+      value: safe travels?
       objectReference: {fileID: 0}
     - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
       propertyPath: Button_TextColors.Array.data[0].b
@@ -1283,6 +1295,22 @@ PrefabInstance:
     - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
       propertyPath: Button_TextColors.Array.data[1].r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
+      propertyPath: PlayerInteraction_Lines.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
+      propertyPath: PlayerInteraction_Lines.Array.data[0]
+      value: Yes, their is one thing...
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
+      propertyPath: PlayerInteraction_Lines.Array.data[1]
+      value: I'm afraid to enter my house
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
+      propertyPath: PlayerInteraction_Lines.Array.data[2]
+      value: I think there may be some sort of monster in their
       objectReference: {fileID: 0}
     - target: {fileID: 5514639555066238977, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
       propertyPath: m_Name
