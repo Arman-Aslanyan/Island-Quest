@@ -22,7 +22,7 @@ public class NPC : MonoBehaviour
     public Canvas canvas;
     //The box that the text shall appear
     public Text textBox;
-    int index = 0;
+    public int index = 0;
     public string NPC_Scene;
     //The auto type speed of NPC dialogue
     [Tooltip("Is measured in seconds")]
@@ -31,6 +31,7 @@ public class NPC : MonoBehaviour
     public GameObject prefabButton;
 
     public static bool hasClicked = false;
+    private bool playerSpoken = false;
 
     private void Start()
     {
@@ -60,11 +61,23 @@ public class NPC : MonoBehaviour
         if (!hasClicked)
         {
             hasClicked = true;
-            //Checks if the NPC's current line is not it's final one
-            if (index <= introduction_Lines.Length - 1)
+            if (!playerSpoken)
             {
-                textBox.text = "";
-                StartCoroutine(NPCDialogueTimer(introduction_Lines));
+                //Checks if the NPC's current line is not it's final one
+                if (index <= introduction_Lines.Length - 1)
+                {
+                    textBox.text = "";
+                    StartCoroutine(NPCDialogueTimer(introduction_Lines));
+                }
+            }
+            else
+            {
+                //Checks if the NPC's current line is not it's final one
+                if (index <= PlayerInteraction_Lines.Length - 1)
+                {
+                    textBox.text = "";
+                    StartCoroutine(NPCDialogueTimer(PlayerInteraction_Lines));
+                }
             }
         }
     }
@@ -75,7 +88,6 @@ public class NPC : MonoBehaviour
         //call ButtonNo() in order to reset dialogue to prevent it staying after changing scenes
         ButtonNo();
         SceneManager.LoadScene("House1");
-        GameManager.Instance.OnSceneChange();
     }
 
     //Upon clicking, Resets NPC dialogue
@@ -103,11 +115,34 @@ public class NPC : MonoBehaviour
             yield return new WaitForSeconds(typingSpeed);
         }
         //Will enable the player to choose after the final sentence has been said
-        if (index == text.Length - 1)
-        {
-            PlayerController.Instance.EnableSpeech();
-        }
         index++;
         hasClicked = false;
+        if (index == text.Length - 1 && !playerSpoken)
+        {
+            FindObjectOfType<PlayerController>().EnableSpeech();
+        }
+        if (text == PlayerInteraction_Lines && index < PlayerInteraction_Lines.Length)
+            StartCoroutine(ContinueSpeech());
+    }
+
+    public IEnumerator StartInteraction()
+    {
+        yield return new WaitForSeconds(1);
+        index = 0;
+        textBox.text = "";
+        playerSpoken = true;
+        StartCoroutine(NPCDialogueTimer(PlayerInteraction_Lines));
+    }
+
+    public IEnumerator ContinueSpeech()
+    {
+        if (index == PlayerInteraction_Lines.Length - 1)
+        {
+            playerSpoken = false;
+            FindObjectOfType<PlayerController>().DisableSpeech();
+        }
+        yield return new WaitForSeconds(1);
+        textBox.text = "";
+        StartCoroutine(NPCDialogueTimer(PlayerInteraction_Lines));
     }
 }

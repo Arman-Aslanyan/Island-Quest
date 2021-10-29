@@ -20,6 +20,13 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         canvas = FindObjectOfType<GameManager>().GetComponentInChildren<Canvas>();
+        PlayerButton = FindObjectOfType<GameManager>().PlayerButton;
+        PlayerButton.gameObject.SetActive(false);
+        //PlayerButton.gameObject.SetActive(false);
+        /*Button[] findButtons = canvas.GetComponentsInChildren<Button>();
+        for (int i = 0; i < findButtons.Length; i++)
+            if (findButtons[i].gameObject.name == "PlayerButton")
+                PlayerButton = findButtons[i];*/
         textBox = canvas.GetComponentInChildren<Text>();
         FindObjectOfType<GameManager>().Player = gameObject;
     }
@@ -43,6 +50,7 @@ public class PlayerController : MonoBehaviour
 
     public void EnableSpeech()
     {
+        print("AAAAAAAA");
         PlayerButton.gameObject.SetActive(true);
         PlayerButton.onClick.AddListener(NPC_Ask);
     }
@@ -52,10 +60,11 @@ public class PlayerController : MonoBehaviour
         PlayerButton.gameObject.SetActive(false);
     }
 
-    void NPC_Ask()
+    public void NPC_Ask()
     {
         if (!NPC.hasClicked)
         {
+            print("runs");
             textBox.text = "";
             StartCoroutine(PlayerDialogueTimer(helpNPC));
         }
@@ -70,6 +79,6 @@ public class PlayerController : MonoBehaviour
             yield return new WaitForSeconds(typingSpeed);
         }
         NPC.hasClicked = false;
-        NPC.Instance.StartCoroutine(NPC.Instance.NPCDialogueTimer(NPC.Instance.PlayerInteraction_Lines));
+        FindObjectOfType<NPC>().StartCoroutine(FindObjectOfType<NPC>().StartInteraction());
     }
 }

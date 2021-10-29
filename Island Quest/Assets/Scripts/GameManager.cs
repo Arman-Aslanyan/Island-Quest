@@ -8,7 +8,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public GameObject Player;
+    public Button PlayerButton;
     public Canvas canvas;
+    public bool aa = false;
 
     // Start is called before the first frame update
     void Start()
@@ -23,17 +25,25 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (aa)
+            ButtonPain(aa);
     }
 
-    public void OnSceneChange()
+    public void ButtonPain(bool opp)
     {
-        //pain
+        if (opp)
+        {
+            aa = false;
+            FindObjectOfType<IgnoreOnTest>().Enable();
+            FindObjectOfType<IgnoreOnTest>().gameObject.GetComponent<Button>().onClick.AddListener(FindObjectOfType<PlayerController>().NPC_Ask);
+        }
     }
+
+
 
     public void ChangeScene(string name)
     {
+        //PlayerButton.gameObject.SetActive(true);
         SceneManager.LoadScene(name);
-        OnSceneChange();
     }
 }
