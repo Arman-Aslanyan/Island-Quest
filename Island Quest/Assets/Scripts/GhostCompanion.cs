@@ -7,9 +7,11 @@ public class GhostCompanion : MonoBehaviour
     [Range(0.1f, 1.0f)]
     public float fadeSpeed = 1f;
     public Color fadeColor = new Color(0, 0, 0, 0);
+    public Vector3 offset = new Vector3(-1, -1, 0);
 
     private Material m_Material;
     private Color m_Color;
+    public bool heinz = false;
 
     void Start()
     {
@@ -17,6 +19,12 @@ public class GhostCompanion : MonoBehaviour
 
         m_Color = m_Material.color;
         StartCoroutine(AlphaGain());
+    }
+
+    private void Update()
+    {
+        if (heinz)
+            transform.position = FindObjectOfType<PlayerController>().transform.position + offset;
     }
 
     IEnumerator AlphaFade()

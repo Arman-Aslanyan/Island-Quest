@@ -34,6 +34,8 @@ public class NPC : MonoBehaviour
     private bool playerSpoken = false;
     public bool isSpeaking = false;
 
+    public bool isHeinz = false;
+
     private void Start()
     {
         //finds the canvas that will be used for dialogue
@@ -125,8 +127,10 @@ public class NPC : MonoBehaviour
                 FindObjectOfType<PlayerController>().EnableSpeech();
             }
             if (text == PlayerInteraction_Lines && index == PlayerInteraction_Lines.Length)
-                if (SceneManager.GetActiveScene().name != "Main Scene"  || SceneManager.GetActiveScene().name == "Arman's Scene" && NPC_Scene == "Main Scene")
+                if (SceneManager.GetActiveScene().name != "Main Scene" || SceneManager.GetActiveScene().name == "Arman's Scene" && NPC_Scene == "Main Scene")
+                {
                     StartCoroutine(WaitForSwitch("Main Scene"));
+                }
                 else
                     StartCoroutine(WaitForSwitch("House1"));
             if (text == PlayerInteraction_Lines && index < PlayerInteraction_Lines.Length)
