@@ -15,11 +15,15 @@ public class PlayerController : MonoBehaviour
     public float typingSpeed = 0.45f;
     public Canvas canvas;
     public Text textBox;
+    private bool flip = false;
+    public Animator anim;
+    public Animation playerAnim;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         canvas = FindObjectOfType<GameManager>().GetComponentInChildren<Canvas>();
         PlayerButton = FindObjectOfType<GameManager>().PlayerButton;
         PlayerButton.gameObject.SetActive(false);
@@ -43,13 +47,20 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (flip)
+            GetComponent<SpriteRenderer>().flipX = true;
+        else if (!flip)
+            GetComponent<SpriteRenderer>().flipX = false;
     }
 
     public void FixedUpdate()
     {
         //Gets User input of keys: 'W' 'A' 'S' 'D' and arrow keys
         float xspeed = Input.GetAxisRaw("Horizontal") * speed;
+        if (xspeed > 0)
+            flip = false;
+        else if (xspeed < 0)
+            flip = true;
         float yspeed = Input.GetAxisRaw("Vertical") * speed;
 
         //Moves the Player Up/down and/or right/left
