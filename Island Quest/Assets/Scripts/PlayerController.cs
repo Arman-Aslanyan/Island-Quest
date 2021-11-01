@@ -94,6 +94,7 @@ public class PlayerController : MonoBehaviour
         }
         //index++;
         NPC.hasClicked = false;
+        PlayerButton.gameObject.SetActive(false);
         FindObjectOfType<NPC>().StartCoroutine(FindObjectOfType<NPC>().StartInteraction());
     }
 }

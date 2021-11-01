@@ -147,7 +147,7 @@ public class NPC : MonoBehaviour
 
     public IEnumerator ContinueSpeech()
     {
-        if (index == PlayerInteraction_Lines.Length - 1)
+        if (index == 1)
         {
             playerSpoken = false;
             FindObjectOfType<PlayerController>().DisableSpeech();

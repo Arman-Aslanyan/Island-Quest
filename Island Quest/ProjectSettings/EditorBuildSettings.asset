@@ -17,10 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Arman's Scene.unity
     guid: e745f3062f0d533499c348dff91f2a4f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Andy's Scene.unity
     guid: 0b743951a7209b941af612d76be4b4b0
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Saharsh's Scene.unity
     guid: 1abf76706027e1b498ee5717cb57c066
   m_configObjects: {}

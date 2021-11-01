@@ -11,7 +11,6 @@ public class GhostCompanion : MonoBehaviour
     private Material m_Material;
     private Color m_Color;
 
-
     void Start()
     {
         m_Material = GetComponent<Renderer>().material;
