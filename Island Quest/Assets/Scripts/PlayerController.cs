@@ -10,7 +10,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     public float speed = 10;
     public Button PlayerButton;
-    private string helpNPC = "Is their anything I may assist you with?";
+    public string helpNPC = ".....";
+    //private int index = 0;
     public float typingSpeed = 0.45f;
     public Canvas canvas;
     public Text textBox;
@@ -29,6 +30,14 @@ public class PlayerController : MonoBehaviour
                 PlayerButton = findButtons[i];*/
         textBox = canvas.GetComponentInChildren<Text>();
         FindObjectOfType<GameManager>().Player = gameObject;
+
+        if (FindObjectsOfType<PlayerController>().Length == 2)
+        {
+            Destroy(gameObject);
+            if (FindObjectOfType<GameManager>().Player == null)
+                print("aaaaaaaaaaaaaaaaaaaaa");
+                FindObjectOfType<GameManager>().Player = gameObject;
+        }
     }
 
     // Update is called once per frame
@@ -53,6 +62,7 @@ public class PlayerController : MonoBehaviour
         print("AAAAAAAA");
         PlayerButton.gameObject.SetActive(true);
         PlayerButton.onClick.AddListener(NPC_Ask);
+        print("bbbb");
     }
 
     public void DisableSpeech()
@@ -62,13 +72,17 @@ public class PlayerController : MonoBehaviour
 
     public void NPC_Ask()
     {
-        if (!NPC.hasClicked)
-        {
-            print("runs");
-            textBox.text = "";
-            StartCoroutine(PlayerDialogueTimer(helpNPC));
-        }
+        print("runs");
+        textBox.text = "";
+        StartCoroutine(PlayerDialogueTimer(helpNPC));
     }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        gameObject.transform.position = Vector3.zero;
+        FindObjectOfType<GameManager>().ChangeScene("House1");
+    }
+
     //The Coroutine that controls the diaglogue text
     public IEnumerator PlayerDialogueTimer(string line)
     {
@@ -78,6 +92,7 @@ public class PlayerController : MonoBehaviour
             textBox.text += character;
             yield return new WaitForSeconds(typingSpeed);
         }
+        //index++;
         NPC.hasClicked = false;
         FindObjectOfType<NPC>().StartCoroutine(FindObjectOfType<NPC>().StartInteraction());
     }

@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
         else
             DontDestroyOnLoad(gameObject);
         canvas = GetComponentInChildren<Canvas>();
+        Player.SetActive(false);
     }
 
     // Update is called once per frame
@@ -39,11 +40,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
-
     public void ChangeScene(string name)
     {
         //PlayerButton.gameObject.SetActive(true);
+        if (SceneManager.GetActiveScene().name == "Start Menu")
+            Player.SetActive(true);
         SceneManager.LoadScene(name);
+        FindObjectOfType<PlayerController>().gameObject.transform.position = Vector3.zero;
     }
 }

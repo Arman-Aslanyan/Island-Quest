@@ -20,5 +20,7 @@ public class CameraFollow : MonoBehaviour
             //Makes the camera follow the player | With the offset needed to actually see the environment
             transform.position = Vector3.Lerp(transform.position, target.position + new Vector3(0, 0, -10), lerpVal);
         }
+        else
+            target = FindObjectOfType<PlayerController>().transform;
     }
 }

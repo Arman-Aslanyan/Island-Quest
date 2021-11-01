@@ -10,7 +10,7 @@ public class IgnoreOnTest : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
-        //gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
 
     public void Enable()

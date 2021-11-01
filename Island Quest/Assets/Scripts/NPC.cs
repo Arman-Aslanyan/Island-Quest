@@ -32,6 +32,7 @@ public class NPC : MonoBehaviour
 
     public static bool hasClicked = false;
     private bool playerSpoken = false;
+    public bool isSpeaking = false;
 
     private void Start()
     {
@@ -85,9 +86,7 @@ public class NPC : MonoBehaviour
     //Upon clicking, Player enters NPC house
     public void ButtonYes()
     {
-        //call ButtonNo() in order to reset dialogue to prevent it staying after changing scenes
-        ButtonNo();
-        SceneManager.LoadScene("House1");
+        //FindObjectOfType<PlayerController>().OnTriggerEnter2D(gameObject.GetComponent<Collider2D>());
     }
 
     //Upon clicking, Resets NPC dialogue
@@ -100,6 +99,7 @@ public class NPC : MonoBehaviour
     void OnClickListener()
     {
         print("You've clicked the funne button");
+        //ButtonYes();
         SceneManager.LoadScene(NPC_Scene);
         for (int i = 0; i < buttons.Length; i++)
             buttons[i].gameObject.SetActive(false);
@@ -108,21 +108,32 @@ public class NPC : MonoBehaviour
     //The Coroutine that controls the diaglogue text
     public IEnumerator NPCDialogueTimer(string[] text)
     {
-        //Auto-typer
-        foreach (char character in text[index].ToCharArray())
+        if (!isSpeaking)
         {
-            textBox.text += character;
-            yield return new WaitForSeconds(typingSpeed);
+            isSpeaking = true;
+            //Auto-typer
+            foreach (char character in text[index].ToCharArray())
+            {
+                textBox.text += character;
+                yield return new WaitForSeconds(typingSpeed);
+            }
+            //Will enable the player to choose after the final sentence has been said
+            index++;
+            hasClicked = false;
+            if (index == text.Length && !playerSpoken && text == introduction_Lines)
+            {
+                FindObjectOfType<PlayerController>().EnableSpeech();
+            }
+            if (text == PlayerInteraction_Lines && index == PlayerInteraction_Lines.Length)
+                if (SceneManager.GetActiveScene().name != "Main Scene"  || SceneManager.GetActiveScene().name == "Arman's Scene" && NPC_Scene == "Main Scene")
+                    StartCoroutine(WaitForSwitch("Main Scene"));
+                else
+                    StartCoroutine(WaitForSwitch("House1"));
+            if (text == PlayerInteraction_Lines && index < PlayerInteraction_Lines.Length)
+                //hasClicked = true;
+                StartCoroutine(ContinueSpeech());
+            isSpeaking = false;
         }
-        //Will enable the player to choose after the final sentence has been said
-        index++;
-        hasClicked = false;
-        if (index == text.Length - 1 && !playerSpoken)
-        {
-            FindObjectOfType<PlayerController>().EnableSpeech();
-        }
-        if (text == PlayerInteraction_Lines && index < PlayerInteraction_Lines.Length)
-            StartCoroutine(ContinueSpeech());
     }
 
     public IEnumerator StartInteraction()
@@ -144,5 +155,13 @@ public class NPC : MonoBehaviour
         yield return new WaitForSeconds(1);
         textBox.text = "";
         StartCoroutine(NPCDialogueTimer(PlayerInteraction_Lines));
+    }
+
+    public IEnumerator WaitForSwitch(string scene)
+    {
+        yield return new WaitForSeconds(1.5f);
+        typingSpeed = 0.045f;
+        textBox.text = "";
+        FindObjectOfType<GameManager>().ChangeScene(scene);
     }
 }
