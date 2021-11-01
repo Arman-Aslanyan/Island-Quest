@@ -6,6 +6,7 @@ TagManager:
   tags:
   - NPC
   - PlayerButton
+  - pain
   layers:
   - Default
   - TransparentFX
