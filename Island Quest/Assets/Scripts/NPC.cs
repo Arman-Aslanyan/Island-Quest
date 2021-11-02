@@ -112,6 +112,7 @@ public class NPC : MonoBehaviour
     {
         if (!isSpeaking)
         {
+            FindObjectOfType<GameManager>().textImg.gameObject.SetActive(true);
             isSpeaking = true;
             //Auto-typer
             foreach (char character in text[index].ToCharArray())
@@ -176,6 +177,7 @@ public class NPC : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         typingSpeed = 0.045f;
         textBox.text = "";
+        FindObjectOfType<GameManager>().textImg.gameObject.SetActive(false);
         FindObjectOfType<GameManager>().ChangeScene(scene);
     }
 }

@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public GameObject Player;
     public Button PlayerButton;
     public Canvas canvas;
+    public Text textBox;
+    public Image textImg;
     public bool aa = false;
 
     // Start is called before the first frame update
@@ -28,6 +30,11 @@ public class GameManager : MonoBehaviour
     {
         if (aa)
             ButtonPain(aa);
+    }
+
+    void FixedUpdate()
+    {
+        textBox.rectTransform.position = textImg.rectTransform.position;
     }
 
     public void ButtonPain(bool opp)
