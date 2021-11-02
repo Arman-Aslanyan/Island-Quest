@@ -1710,7 +1710,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 2
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.1
   m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: 6ff123e6db97a044baf27abc9638f2ef, type: 2}
   m_Interpolate: 0
@@ -1729,7 +1729,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7e931d53f484aa4b820c66758d8888a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 500
+  speed: 2
   PlayerButton: {fileID: 0}
   helpNPC: ....
   typingSpeed: 0.05
