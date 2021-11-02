@@ -8,6 +8,7 @@ public class GhostCompanion : MonoBehaviour
     public float fadeSpeed = 1f;
     public Color fadeColor = new Color(0, 0, 0, 0);
     public Vector3 offset = new Vector3(-1, -1, 0);
+    public GameObject player;
 
     private Material m_Material;
     private Color m_Color;
@@ -16,15 +17,16 @@ public class GhostCompanion : MonoBehaviour
     void Start()
     {
         m_Material = GetComponent<Renderer>().material;
+        player = FindObjectOfType<PlayerController>().gameObject;
 
         m_Color = m_Material.color;
         StartCoroutine(AlphaGain());
     }
 
-    private void Update()
+    public void FixedUpdate()
     {
-        if (heinz)
-            transform.position = FindObjectOfType<PlayerController>().transform.position + offset;
+        if (player != null && heinz)
+            transform.position = player.transform.position + offset;
     }
 
     IEnumerator AlphaFade()

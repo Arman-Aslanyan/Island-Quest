@@ -126,6 +126,16 @@ public class NPC : MonoBehaviour
             {
                 FindObjectOfType<PlayerController>().EnableSpeech();
             }
+            if (index == text.Length && text == PlayerInteraction_Lines)
+            {
+                if (isHeinz && FindObjectsOfType<GhostCompanion>().Length < 2)
+                {
+                    GhostCompanion ghost = FindObjectOfType<GhostCompanion>();
+                    ghost.heinz = true;
+                    ghost.GetComponent<BoxCollider2D>().enabled = false;
+                    ghost.transform.SetParent(FindObjectOfType<PlayerController>().transform);
+                }
+            }
             if (text == PlayerInteraction_Lines && index == PlayerInteraction_Lines.Length)
                 if (SceneManager.GetActiveScene().name != "Main Scene" || SceneManager.GetActiveScene().name == "Arman's Scene" && NPC_Scene == "Main Scene")
                 {
