@@ -55,19 +55,29 @@ public class PlayerController : MonoBehaviour
 
     public void FixedUpdate()
     {
-        //Gets User input of keys: 'W' 'A' 'S' 'D' and arrow keys
-        float xspeed = Input.GetAxisRaw("Horizontal") * speed;
-        if (xspeed > 0)
+        Vector2 direction = Vector2.zero;
+        direction.x = Input.GetAxisRaw("Horizontal");
+        if (direction.x > 0)
             flip = false;
-        else if (xspeed < 0)
+        else if (direction.x < 0)
             flip = true;
-        float yspeed = Input.GetAxisRaw("Vertical") * speed;
-
-        //Moves the Player Up/down and/or right/left
-        rb.AddForce(transform.right * xspeed * Time.fixedDeltaTime);
-        rb.AddForce(transform.up * yspeed * Time.fixedDeltaTime);
+            direction.y = Input.GetAxisRaw("Vertical");
+        rb.velocity = direction * speed;
     }
-
+    //public void FixedUpdate()
+    //{
+        //Gets User input of keys: 'W' 'A' 'S' 'D' and arrow keys
+    //    float xspeed = Input.GetAxisRaw("Horizontal") * speed;
+    //    if (xspeed > 0)
+    //        flip = false;
+    //    else if (xspeed < 0)
+    //        flip = true;
+    //    float yspeed = Input.GetAxisRaw("Vertical") * speed;
+    //
+        //Moves the Player Up/down and/or right/left
+    //    rb.AddForce(transform.right * xspeed * Time.fixedDeltaTime);
+    //    rb.AddForce(transform.up * yspeed * Time.fixedDeltaTime);
+    //}
     public void EnableSpeech()
     {
         print("AAAAAAAA");
