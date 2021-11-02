@@ -142,10 +142,10 @@ public class NPC : MonoBehaviour
                     StartCoroutine(WaitForSwitch("Main Scene"));
                 }
                 else
-                    StartCoroutine(WaitForSwitch("House1"));
-            if (text == PlayerInteraction_Lines && index < PlayerInteraction_Lines.Length)
+                    StartCoroutine(WaitForSwitch(NPC_Scene));
+            if (index < text.Length)
                 //hasClicked = true;
-                StartCoroutine(ContinueSpeech());
+                StartCoroutine(ContinueSpeech(text));
             isSpeaking = false;
         }
     }
@@ -159,7 +159,7 @@ public class NPC : MonoBehaviour
         StartCoroutine(NPCDialogueTimer(PlayerInteraction_Lines));
     }
 
-    public IEnumerator ContinueSpeech()
+    public IEnumerator ContinueSpeech(string[] text)
     {
         if (index == 1)
         {
@@ -168,7 +168,7 @@ public class NPC : MonoBehaviour
         }
         yield return new WaitForSeconds(1);
         textBox.text = "";
-        StartCoroutine(NPCDialogueTimer(PlayerInteraction_Lines));
+        StartCoroutine(NPCDialogueTimer(text));
     }
 
     public IEnumerator WaitForSwitch(string scene)
