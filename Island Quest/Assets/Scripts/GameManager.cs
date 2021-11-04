@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour
     {
         if (aa)
             ButtonPain(aa);
+        if (Input.GetKeyDown(KeyCode.H))
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     void FixedUpdate()

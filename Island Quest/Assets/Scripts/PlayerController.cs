@@ -98,10 +98,14 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(PlayerDialogueTimer(helpNPC));
     }
 
-    public void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerEnter2D(Collider2D other)
     {
-        gameObject.transform.position = Vector3.zero;
-        FindObjectOfType<GameManager>().ChangeScene("House1");
+        if (other.gameObject.name == "bracelet")
+        {
+            other.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+            other.transform.SetParent(FindObjectOfType<PlayerController>().transform);
+            other.transform.position = new Vector3(0.25f, 0, 0);
+        }
     }
 
     //The Coroutine that controls the diaglogue text

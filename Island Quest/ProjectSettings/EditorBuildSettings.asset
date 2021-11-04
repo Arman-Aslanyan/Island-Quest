@@ -9,14 +9,17 @@ EditorBuildSettings:
     path: Assets/Scenes/Start Menu.unity
     guid: 7af60e61feb38b54aa0009332fbef422
   - enabled: 1
+    path: Assets/Scenes/Arman's Scene.unity
+    guid: e745f3062f0d533499c348dff91f2a4f
+  - enabled: 1
     path: Assets/Scenes/Main Scene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/Houses/House1.unity
     guid: 0f2dd092bfaf1c64e994140b6a88e538
   - enabled: 1
-    path: Assets/Scenes/Arman's Scene.unity
-    guid: e745f3062f0d533499c348dff91f2a4f
+    path: Assets/Scenes/You Failed.unity
+    guid: dda6eef55688f694895c73bdffc39a93
   - enabled: 0
     path: Assets/Scenes/Andy's Scene.unity
     guid: 0b743951a7209b941af612d76be4b4b0

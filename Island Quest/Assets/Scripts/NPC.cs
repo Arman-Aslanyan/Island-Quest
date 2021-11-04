@@ -11,6 +11,8 @@ public class NPC : MonoBehaviour
     //The sentences the NPC shall say
     public string[] introduction_Lines;
     public string[] PlayerInteraction_Lines;
+    private string[] ending = { "You failed", "Heinz rampaged and destroyed the island", "Congratultions!", "...", "On Failing.." };
+    private string[] textToPrint;
     //All the player input chat buttons
     //public List<Button> buttons = new List<Button>();
     public Button[] buttons;
@@ -24,12 +26,14 @@ public class NPC : MonoBehaviour
     public Text textBox;
     public int index = 0;
     public string NPC_Scene;
+    public bool changeScene;
     //The auto type speed of NPC dialogue
     [Tooltip("Is measured in seconds")]
     public float typingSpeed = 0.02f;
 
     public GameObject prefabButton;
 
+    public bool shouldClick = true;
     public static bool hasClicked = false;
     private bool playerSpoken = false;
     public bool isSpeaking = false;
@@ -56,33 +60,41 @@ public class NPC : MonoBehaviour
             clone.GetComponentInChildren<Text>().color = Color.grey - new Color(0.4f, 0.4f, 0.4f, 0);
             buttons[i].onClick.AddListener(OnClickListener);
         }
+
+        if (!shouldClick)
+            StartCoroutine(NPCDialogueTimer(ending));
     }
 
     //Triggers upon clicking the NPC
     public void OnMouseUp()
     {
-        if (!hasClicked)
+        if (!hasClicked && shouldClick)
         {
+
             hasClicked = true;
             if (!playerSpoken)
             {
+                textToPrint = gameObject.GetComponent<NPC>().introduction_Lines;
+
                 //Checks if the NPC's current line is not it's final one
                 if (index <= introduction_Lines.Length - 1)
                 {
                     textBox.text = "";
-                    StartCoroutine(NPCDialogueTimer(introduction_Lines));
+                    StartCoroutine(NPCDialogueTimer(textToPrint));
                 }
             }
             else
             {
+                textToPrint = gameObject.GetComponent<NPC>().PlayerInteraction_Lines;
+
                 //Checks if the NPC's current line is not it's final one
                 if (index <= PlayerInteraction_Lines.Length - 1)
                 {
                     textBox.text = "";
-                    StartCoroutine(NPCDialogueTimer(PlayerInteraction_Lines));
+                    StartCoroutine(NPCDialogueTimer(textToPrint));
                 }
             }
-        }
+        } 
     }
 
     //Upon clicking, Player enters NPC house
@@ -127,7 +139,7 @@ public class NPC : MonoBehaviour
             {
                 FindObjectOfType<PlayerController>().EnableSpeech();
             }
-            if (index == text.Length && text == PlayerInteraction_Lines)
+            if (index == 10 && text == PlayerInteraction_Lines)
             {
                 if (isHeinz && FindObjectsOfType<GhostCompanion>().Length < 2)
                 {
@@ -137,6 +149,8 @@ public class NPC : MonoBehaviour
                     ghost.transform.SetParent(FindObjectOfType<PlayerController>().transform);
                 }
             }
+            if (text == PlayerInteraction_Lines && index == PlayerInteraction_Lines.Length && isHeinz)
+                StartCoroutine(WaitForSwitch("You Failed"));
             if (text == PlayerInteraction_Lines && index == PlayerInteraction_Lines.Length)
                 if (SceneManager.GetActiveScene().name != "Main Scene" || SceneManager.GetActiveScene().name == "Arman's Scene" && NPC_Scene == "Main Scene")
                 {
@@ -177,7 +191,10 @@ public class NPC : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         typingSpeed = 0.045f;
         textBox.text = "";
-        FindObjectOfType<GameManager>().textImg.gameObject.SetActive(false);
-        FindObjectOfType<GameManager>().ChangeScene(scene);
+        if (changeScene)
+        {
+            FindObjectOfType<GameManager>().textImg.gameObject.SetActive(false);
+            FindObjectOfType<GameManager>().ChangeScene(scene);
+        }
     }
 }

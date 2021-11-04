@@ -3076,5 +3076,101 @@ PrefabInstance:
       propertyPath: typingSpeed
       value: 0.035
       objectReference: {fileID: 0}
+    - target: {fileID: 4555977932177340375, guid: 849506b7cb18de84f8b8e84fc3d29a0a, type: 3}
+      propertyPath: PlayerInteraction_Lines.Array.size
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555977932177340375, guid: 849506b7cb18de84f8b8e84fc3d29a0a, type: 3}
+      propertyPath: PlayerInteraction_Lines.Array.data[11]
+      value: '   '
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555977932177340375, guid: 849506b7cb18de84f8b8e84fc3d29a0a, type: 3}
+      propertyPath: PlayerInteraction_Lines.Array.data[12]
+      value: '   '
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555977932177340375, guid: 849506b7cb18de84f8b8e84fc3d29a0a, type: 3}
+      propertyPath: PlayerInteraction_Lines.Array.data[13]
+      value: WELL WELL!!!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555977932177340375, guid: 849506b7cb18de84f8b8e84fc3d29a0a, type: 3}
+      propertyPath: PlayerInteraction_Lines.Array.data[14]
+      value: Want to cause some chaos >:)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555977932177340375, guid: 849506b7cb18de84f8b8e84fc3d29a0a, type: 3}
+      propertyPath: PlayerInteraction_Lines.Array.data[15]
+      value: ...
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555977932177340375, guid: 849506b7cb18de84f8b8e84fc3d29a0a, type: 3}
+      propertyPath: PlayerInteraction_Lines.Array.data[16]
+      value: .....
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555977932177340375, guid: 849506b7cb18de84f8b8e84fc3d29a0a, type: 3}
+      propertyPath: PlayerInteraction_Lines.Array.data[17]
+      value: No?
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555977932177340375, guid: 849506b7cb18de84f8b8e84fc3d29a0a, type: 3}
+      propertyPath: PlayerInteraction_Lines.Array.data[18]
+      value: fine...
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555977932177340375, guid: 849506b7cb18de84f8b8e84fc3d29a0a, type: 3}
+      propertyPath: PlayerInteraction_Lines.Array.data[19]
+      value: .....
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555977932177340375, guid: 849506b7cb18de84f8b8e84fc3d29a0a, type: 3}
+      propertyPath: PlayerInteraction_Lines.Array.data[20]
+      value: .....
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555977932177340375, guid: 849506b7cb18de84f8b8e84fc3d29a0a, type: 3}
+      propertyPath: PlayerInteraction_Lines.Array.data[21]
+      value: .....
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555977932177340375, guid: 849506b7cb18de84f8b8e84fc3d29a0a, type: 3}
+      propertyPath: PlayerInteraction_Lines.Array.data[22]
+      value: I'm bored...
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555977932177340375, guid: 849506b7cb18de84f8b8e84fc3d29a0a, type: 3}
+      propertyPath: PlayerInteraction_Lines.Array.data[23]
+      value: screw this...
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555977932177340375, guid: 849506b7cb18de84f8b8e84fc3d29a0a, type: 3}
+      propertyPath: PlayerInteraction_Lines.Array.data[24]
+      value: I'm heading out
+      objectReference: {fileID: 0}
+    - target: {fileID: 6736204799149862979, guid: 849506b7cb18de84f8b8e84fc3d29a0a, type: 3}
+      propertyPath: lines.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6736204799149862979, guid: 849506b7cb18de84f8b8e84fc3d29a0a, type: 3}
+      propertyPath: lines.Array.data[0]
+      value: WELL WELL!!!
+      objectReference: {fileID: 0}
+    - target: {fileID: 6736204799149862979, guid: 849506b7cb18de84f8b8e84fc3d29a0a, type: 3}
+      propertyPath: lines.Array.data[1]
+      value: Want to cause some chaos >:)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6736204799149862979, guid: 849506b7cb18de84f8b8e84fc3d29a0a, type: 3}
+      propertyPath: lines.Array.data[2]
+      value: ....
+      objectReference: {fileID: 0}
+    - target: {fileID: 6736204799149862979, guid: 849506b7cb18de84f8b8e84fc3d29a0a, type: 3}
+      propertyPath: lines.Array.data[3]
+      value: ......
+      objectReference: {fileID: 0}
+    - target: {fileID: 6736204799149862979, guid: 849506b7cb18de84f8b8e84fc3d29a0a, type: 3}
+      propertyPath: lines.Array.data[4]
+      value: No?
+      objectReference: {fileID: 0}
+    - target: {fileID: 6736204799149862979, guid: 849506b7cb18de84f8b8e84fc3d29a0a, type: 3}
+      propertyPath: lines.Array.data[5]
+      value: fine...
+      objectReference: {fileID: 0}
+    - target: {fileID: 6736204799149862979, guid: 849506b7cb18de84f8b8e84fc3d29a0a, type: 3}
+      propertyPath: lines.Array.data[6]
+      value: Why don't we head North?
+      objectReference: {fileID: 0}
+    - target: {fileID: 6736204799149862979, guid: 849506b7cb18de84f8b8e84fc3d29a0a, type: 3}
+      propertyPath: lines.Array.data[7]
+      value: Why don't we head North?
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 849506b7cb18de84f8b8e84fc3d29a0a, type: 3}
