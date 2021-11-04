@@ -1099,11 +1099,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
       propertyPath: PlayerInteraction_Lines.Array.data[0]
-      value: What thou seeks shall cometh upon thee when thy time is right
+      value: what matters is not where you are
       objectReference: {fileID: 0}
     - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
       propertyPath: PlayerInteraction_Lines.Array.data[1]
-      value: As for your journey..
+      value: but where your going.
       objectReference: {fileID: 0}
     - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
       propertyPath: PlayerInteraction_Lines.Array.data[2]
