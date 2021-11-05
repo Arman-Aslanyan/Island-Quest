@@ -11,7 +11,7 @@ public class NPC : MonoBehaviour
     //The sentences the NPC shall say
     public string[] introduction_Lines;
     public string[] PlayerInteraction_Lines;
-    private string[] ending = { "You failed", "Heinz rampaged and destroyed the island", "Congratultions!", "...", "On Failing.." };
+    private string[] ending = { "You failed", "Heinz rampaged and destroyed the island", "Congratulations!", "...", "On failing.." };
     private string[] textToPrint;
     //All the player input chat buttons
     //public List<Button> buttons = new List<Button>();
@@ -36,6 +36,7 @@ public class NPC : MonoBehaviour
     public bool shouldClick = true;
     public static bool hasClicked = false;
     private bool playerSpoken = false;
+    public string PlayerButtonText = "ask?";
     public bool isSpeaking = false;
 
     public bool isHeinz = false;
@@ -138,8 +139,9 @@ public class NPC : MonoBehaviour
             if (index == text.Length && !playerSpoken && text == introduction_Lines)
             {
                 FindObjectOfType<PlayerController>().EnableSpeech();
+                FindObjectOfType<GameManager>().PlayerButton.GetComponentInChildren<Text>().text = PlayerButtonText;
             }
-            if (index == 10 && text == PlayerInteraction_Lines)
+            if (index == 11 && text == PlayerInteraction_Lines)
             {
                 if (isHeinz && FindObjectsOfType<GhostCompanion>().Length < 2)
                 {
@@ -149,18 +151,15 @@ public class NPC : MonoBehaviour
                     ghost.transform.SetParent(FindObjectOfType<PlayerController>().transform);
                 }
             }
-            if (text == PlayerInteraction_Lines && index == PlayerInteraction_Lines.Length && isHeinz)
-                StartCoroutine(WaitForSwitch("You Failed"));
+/*            if (text == PlayerInteraction_Lines && index == PlayerInteraction_Lines.Length && isHeinz)
+                StartCoroutine(WaitForSwitch("You Failed"));*/
             if (text == PlayerInteraction_Lines && index == PlayerInteraction_Lines.Length)
-                if (SceneManager.GetActiveScene().name != "Main Scene" || SceneManager.GetActiveScene().name == "Arman's Scene" && NPC_Scene == "Main Scene")
-                {
-                    StartCoroutine(WaitForSwitch("Main Scene"));
-                }
-                else
-                    StartCoroutine(WaitForSwitch(NPC_Scene));
+                StartCoroutine(WaitForSwitch(NPC_Scene));
             if (index < text.Length)
                 //hasClicked = true;
                 StartCoroutine(ContinueSpeech(text));
+            else if (index >= text.Length && FindObjectOfType<NPC>().gameObject.name == "InvisNPC")
+                StartCoroutine(WaitToDisbale(1.5f));
             isSpeaking = false;
         }
     }
@@ -193,8 +192,29 @@ public class NPC : MonoBehaviour
         textBox.text = "";
         if (changeScene)
         {
-            FindObjectOfType<GameManager>().textImg.gameObject.SetActive(false);
-            FindObjectOfType<GameManager>().ChangeScene(scene);
+            if (scene == "You Failed")
+            {
+                Image img = FindObjectOfType<GameManager>().textImg;
+                img.gameObject.SetActive(false);
+                GhostCompanion ghost = FindObjectOfType<GhostCompanion>();
+                ghost.gameObject.SetActive(false);
+                FindObjectOfType<GameManager>().ChangeScene(scene);
+                yield return new WaitForSeconds(1.0f);
+                img.gameObject.SetActive(true);
+                img.rectTransform.position = new Vector3(10, 10, 0) * 100;
+            }
+            else
+            {
+                FindObjectOfType<GameManager>().textImg.gameObject.SetActive(false);
+                FindObjectOfType<GameManager>().ChangeScene(scene);
+            }
         }
+    }
+
+    public IEnumerator WaitToDisbale(float time)
+    {
+        yield return new WaitForSeconds(time);
+        FindObjectOfType<GameManager>().textBox.gameObject.SetActive(false);
+        FindObjectOfType<GameManager>().textImg.gameObject.SetActive(false);
     }
 }

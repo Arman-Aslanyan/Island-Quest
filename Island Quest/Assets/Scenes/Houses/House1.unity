@@ -3070,11 +3070,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4555977932177340375, guid: 849506b7cb18de84f8b8e84fc3d29a0a, type: 3}
       propertyPath: NPC_Scene
-      value: House1
+      value: You Failed
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555977932177340375, guid: 849506b7cb18de84f8b8e84fc3d29a0a, type: 3}
+      propertyPath: changeScene
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4555977932177340375, guid: 849506b7cb18de84f8b8e84fc3d29a0a, type: 3}
       propertyPath: typingSpeed
       value: 0.035
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555977932177340375, guid: 849506b7cb18de84f8b8e84fc3d29a0a, type: 3}
+      propertyPath: PlayerButtonText
+      value: ...yes
       objectReference: {fileID: 0}
     - target: {fileID: 4555977932177340375, guid: 849506b7cb18de84f8b8e84fc3d29a0a, type: 3}
       propertyPath: PlayerInteraction_Lines.Array.size

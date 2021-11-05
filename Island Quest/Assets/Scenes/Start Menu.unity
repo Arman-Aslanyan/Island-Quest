@@ -1892,6 +1892,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 448487655}
     m_Modifications:
+    - target: {fileID: 1215125453830426799, guid: 0350c179f51cb98448a2ca7205f52a20, type: 3}
+      propertyPath: m_FontData.m_BestFit
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215125453830426799, guid: 0350c179f51cb98448a2ca7205f52a20, type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 279
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215125453830426799, guid: 0350c179f51cb98448a2ca7205f52a20, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215125453830426799, guid: 0350c179f51cb98448a2ca7205f52a20, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215125453830426799, guid: 0350c179f51cb98448a2ca7205f52a20, type: 3}
+      propertyPath: m_FontData.m_RichText
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1215125454767785882, guid: 0350c179f51cb98448a2ca7205f52a20, type: 3}
       propertyPath: m_Type
       value: 0
@@ -1937,6 +1957,18 @@ PrefabInstance:
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 1215125454767785884, guid: 0350c179f51cb98448a2ca7205f52a20, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215125454767785884, guid: 0350c179f51cb98448a2ca7205f52a20, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215125454767785884, guid: 0350c179f51cb98448a2ca7205f52a20, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215125454767785884, guid: 0350c179f51cb98448a2ca7205f52a20, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -1970,7 +2002,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1215125454767785884, guid: 0350c179f51cb98448a2ca7205f52a20, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -129
+      value: -122
       objectReference: {fileID: 0}
     - target: {fileID: 1215125454767785884, guid: 0350c179f51cb98448a2ca7205f52a20, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

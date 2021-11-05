@@ -914,6 +914,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6388465708846923334, guid: bdb4636e9fd8b1b41a95aaad598e97ef, type: 3}
     - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
+      propertyPath: PlayerButtonText
+      value: Whe..
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
       propertyPath: lines.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -1103,11 +1107,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
       propertyPath: PlayerInteraction_Lines.Array.data[0]
-      value: What matters is not where you are
+      value: What matters not is where you are
       objectReference: {fileID: 0}
     - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
       propertyPath: PlayerInteraction_Lines.Array.data[1]
-      value: But where your going
+      value: But where you're going
       objectReference: {fileID: 0}
     - target: {fileID: 5514639555066238976, guid: b65455f7726a32547b8057fd977cd7c9, type: 3}
       propertyPath: PlayerInteraction_Lines.Array.data[2]
